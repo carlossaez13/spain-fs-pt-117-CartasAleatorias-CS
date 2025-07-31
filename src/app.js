@@ -13,9 +13,9 @@ function generateCard() {
   const bottomSuit = document.getElementById("bottom-suit");
   const cardValue = document.getElementById("card-value");
 
-  // Limpiar clases anteriores
+
   cardEl.className = "card";
-  // Añadir clase de palo
+ 
   const suitClass = ["♥","♦"].includes(suit) ? suit === "♥" ? "heart" : "diamond"
                   : suit === "♣" ? "club" : "spade";
   cardEl.classList.add(suitClass);

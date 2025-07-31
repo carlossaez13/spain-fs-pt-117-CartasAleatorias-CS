@@ -1,11 +1,26 @@
-import "bootstrap";
-import "./style.css";
+function generateCard() {
+  const suits = ["♥", "♦", "♣", "♠"];
+  const values = ["A", "2", "3", "4", "5", "6", "7", "8", "9", "10", "J", "Q", "K"];
 
+  const suitIndex = Math.floor(Math.random() * suits.length);
+  const valueIndex = Math.floor(Math.random() * values.length);
 
-import "./assets/img/rigo-baby.jpg";
-import "./assets/img/4geeks.ico";
+  const suit = suits[suitIndex];
+  const value = values[valueIndex];
 
-window.onload = function() {
-  //write your code here
-  console.log("Hello Rigo from the console!");
-};
+  const cardEl = document.getElementById("card");
+  const topSuit = document.getElementById("top-suit");
+  const bottomSuit = document.getElementById("bottom-suit");
+  const cardValue = document.getElementById("card-value");
+
+  // Limpiar clases anteriores
+  cardEl.className = "card";
+  // Añadir clase de palo
+  const suitClass = ["♥","♦"].includes(suit) ? suit === "♥" ? "heart" : "diamond"
+                  : suit === "♣" ? "club" : "spade";
+  cardEl.classList.add(suitClass);
+
+  topSuit.textContent = suit;
+  bottomSuit.textContent = suit;
+  cardValue.textContent = value;
+}

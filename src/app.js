@@ -16,8 +16,17 @@ function generateCard() {
 
   cardEl.className = "card";
  
-  const suitClass = ["♥","♦"].includes(suit) ? suit === "♥" ? "heart" : "diamond"
-                  : suit === "♣" ? "club" : "spade";
+  let suitClass;
+
+  if (suit === "♥") {
+    suitClass = "heart";
+  } else if (suit === "♦") {
+    suitClass = "diamond";
+  } else if (suit === "♣") {
+    suitClass = "club";
+  } else {
+    suitClass = "spade";
+  }
   cardEl.classList.add(suitClass);
 
   topSuit.textContent = suit;
